@@ -7,6 +7,7 @@ let searchRadius = 0.02;
 let hasStarted = false;
 let wakeLock = null;
 let wakeLockSupported = false;
+let changeCount = 0;
 
 //Array 
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
@@ -44,6 +45,7 @@ options = {
 
 function SearchTriggerPos()
 {
+  changeCount++;
   let currentPointTemp;
 
   //Geht durch das posArray
@@ -67,7 +69,12 @@ function SearchTriggerPos()
     console.log(currentPointTemp);
     currentDistance = calculateDistance(currentPos.latitude, currentPos.longitude,currentPointTemp.lat, currentPointTemp.long);
     $.getScript("player.js",loadPosition(currentPoint));
-  } 
+    document.getElementById("pointCountText").innerHTML = "Point Count: " + pointCount + "Change Count: " + changeCount;
+  }
+  else
+  {
+    document.getElementById("pointCountText").innerHTML = "Point Count: " + pointCount + "Change Count: " + changeCount;
+  }
 
   pointCount = 0;
 }
