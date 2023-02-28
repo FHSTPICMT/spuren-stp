@@ -15,7 +15,7 @@ const posArray =
 [
   {name:"02_Steinbruch_Ort", lat: 48.200161, long: 15.607478, cover:1},
   {name:"03_Verladestation", lat: 48.200136, long: 15.608068, cover:2},
-  {name:"01_Die_Ortsansaessigen", lat: 48.200234, long: 15.606781, cover:0}
+  {name:"01_Die_Ortsansaessigen", lat: 48.200443, long: 15.606673, cover:0}
 ];
 
 navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
