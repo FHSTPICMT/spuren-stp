@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+     <link rel="stylesheet" href="css/all.min.css" />
+    <title>Spuren lesbar machen</title>
+  </head>
+  <body>
+    <div id="debug">
+      <p>
+        Current Location (lat, lon):<br/>
+        <span id="currentLat">locating...</span>&deg;, <span id="currentLon">locating...</span>&deg;
+      </p>
+      <p>
+        Distance from current target:<br/>
+        <span id="distance">0</span> km
+      </p>
+
+      <p>
+        Accuracy:<br/>
+        <span id="accuracyText">0</span> 
+      </p>
+
+      <p>
+        Wake Lock:<br/>
+        <span id="wakeText">0</span> 
+      </p>
+    </div>
+
+    <div id="content">
+      <h1 id="mainTitle">Spuren lesbar machen</h1>
+      <div class="music-container">
+        <div class="music-info">
+          <h4 id="title">Song Title</h4>
+          <div class="progress-container">
+            <div class="progress">
+  
+            </div>
+          </div>
+        </div>
+        <audio src="audio/01_Ortsansaessigen.mp3" id="audio"></audio>
+  
+        <div class="img-container">
+          <img src="" alt="music-cover" id="cover"/>
+        </div>
+        <div class="navigation">
+          <div class="audioButtons">
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button onclick="ToggleDebug()" class="button button2">Debug</button>
+    </div>
+
+
+
+    <!-- JS -->
+    <!-- JQuery for $ Operator in JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/fence.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    
+  </body>
+</html>
