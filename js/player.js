@@ -9,7 +9,7 @@ const title = document.querySelector('#title');
 const cover = document.querySelector('#cover');
 
 // Song titles
-const songs=["00_Welcome","02_Steinbruch_Ort","03_Verladestation","01_Die_Ortsansaessigen","04_Das_Lager"];
+const songs=["00_Welcome","01_Die_Ortsansaessigen","02_Steinbruch_Ort","03_Verladestation","04_Das_Lager","05_Die_Ortschaften", "06_Die_Kirche", "07_Die_Einfahrt", "08_Die_Wirtschaft", "09_Die_Kollegen", "10_Das_Spalten"];
 
 // Keep track of the songs
 let songIndex = 0;
