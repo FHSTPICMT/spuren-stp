@@ -13,7 +13,7 @@ let changeCount = 0;
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
 const posArray =   
 [
-  {name:"01_Die_Ortsansaessigen", lat: 0, long: 0, cover:1},
+  {name:"01_Die_Ortsansaessigen", lat: 48.131365, long: 16.265664, cover:1},
   {name:"02_Steinbruch_Ort", lat: 48.131290, long: 16.267342, cover:2},
   {name:"03_Verladestation", lat: 48.131026, long: 16.266549, cover:3},
   {name:"04_Das_Lager", lat: 48.131180, long: 16.268040, cover:4},
