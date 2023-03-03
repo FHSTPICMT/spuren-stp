@@ -20,7 +20,13 @@ const posArray =
   {name:"05_Die_Ortschaften", lat: 48.687754, long: 15.852430, cover:5}, 
   {name:"06_Die_Kirche", lat:  48.687644, long: 15.852956, cover:6}, 
   {name:"07_Die_Einfahrt", lat: 48.687434, long: 15.853374, cover:7}, 
-  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8}, 
+  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8},
+  {name:"09_Die_Kollegen", lat: 48.687339, long: 15.854404, cover:9}, 
+  {name:"10_Das_Spalten", lat: 48.202585, long: 15.604664, cover:10},
+  {name:"11_Der_Baron", lat: 48.202837, long: 15.605105, cover:11},
+  {name:"12_Die_Betriebsbaracke", lat: 48.203141, long: 15.606164, cover:12},
+  {name:"13_Das_Ziegelwerk", lat: 48.203315, long: 15.606677, cover:13},
+  {name:"14_Das_Waechterhaus", lat: 48.203478, long: 15.607211, cover:14}
 ];
 
 navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
