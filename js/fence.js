@@ -20,7 +20,7 @@ const posArray =
   {name:"05_Die_Ortschaften", lat: 48.687754, long: 15.852430, cover:5}, 
   {name:"06_Die_Kirche", lat:  48.687644, long: 15.852956, cover:6}, 
   {name:"07_Die_Einfahrt", lat: 48.687434, long: 15.853374, cover:7}, 
-  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8},
+  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8}, 
   {name:"09_Die_Kollegen", lat: 48.687339, long: 15.854404, cover:9}, 
   {name:"10_Das_Spalten", lat: 48.202585, long: 15.604664, cover:10},
   {name:"11_Der_Baron", lat: 48.202837, long: 15.605105, cover:11},
@@ -34,11 +34,11 @@ navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
 //Get the current position
 function succesCallback(pos)
 {
+  currentPos = pos.coords;
+  UpdateHtmlText();
   if(hasStarted)
   {
-    currentPos = pos.coords;
     SearchTriggerPos();
-    UpdateHtmlText();
   }
 }
 
