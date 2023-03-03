@@ -3,7 +3,7 @@ let currentPos;
 let currentPoint;
 let currentDistance;
 let pointCount = 0;
-let searchRadius = 0.02;
+let searchRadius = 0.015;
 let hasStarted = false;
 let wakeLock = null;
 let wakeLockSupported = false;
