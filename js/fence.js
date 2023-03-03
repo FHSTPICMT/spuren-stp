@@ -13,11 +13,14 @@ let changeCount = 0;
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
 const posArray =   
 [
-  {name:"02_Steinbruch_Ort", lat: 48.688112,long: 15.852433, cover:1},
-  {name:"03_Verladestation", lat: 48.688011, long: 15.852956 , cover:2},
-  {name:"01_Die_Ortsansaessigen2", lat: 0, long: 0, cover:0},
-  {name:"04_Das_Lager", lat: 48.200538, long: 15.607851, cover:4},
-  {name:"05_Die_Ortsansaessigen", lat: 48.200443, long: 15.606673, cover:5}
+  {name:"01_Die_Ortsansaessigen", lat: 48.688112, long: 15.852433, cover:1},
+  {name:"02_Steinbruch_Ort", lat: 48.688011, long: 15.852956, cover:2}, 
+  {name:"03_Verladestation", lat: 48.687832, long: 15.853423, cover:3}, 
+  {name:"04_Das_Lager", lat: 48.687839, long: 15.853981, cover:4}, 
+  {name:"05_Die_Ortschaften", lat: 48.687754, long: 15.852430, cover:5}, 
+  {name:"06_Die_Kirche", lat:  48.687644, long: 15.852956, cover:6}, 
+  {name:"07_Die_Einfahrt", lat: 48.687434, long: 15.853374, cover:7}, 
+  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8}, 
 ];
 
 navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
