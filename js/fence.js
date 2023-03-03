@@ -13,16 +13,20 @@ let changeCount = 0;
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
 const posArray =   
 [
-  {name:"01_Die_Ortsansaessigen", lat: 48.131365, long: 16.265664, cover:1},
-  {name:"02_Steinbruch_Ort", lat: 48.131290, long: 16.267342, cover:2},
-  {name:"03_Verladestation", lat: 48.131026, long: 16.266549, cover:3},
-  {name:"04_Das_Lager", lat: 48.131180, long: 16.268040, cover:4},
-  {name:"05_Die_Ortschaften", lat: 48.128936, long: 16.267168, cover:5},
-  {name:"06_Die_Kirche", lat: 48.128762, long: 16.266554, cover:6},
-  {name:"07_Die_Einfahrt", lat: 48.127045, long: 16.268729, cover:7},
-  {name:"08_Die_Wirtschaft", lat: 48.126301, long: 16.267669, cover:8},
-  {name:"09_Die_Kollegen", lat: 48.125894, long: 16.268376, cover:9},
-  {name:"10_Das_Spalten", lat: 48.125811, long: 16.267161, cover:10}
+  {name:"01_Die_Ortsansaessigen", lat: 48.200171, long: 15.607446, cover:1},
+  {name:"02_Steinbruch_Ort", lat: 48.200226, long: 15.606874, cover:2}, 
+  {name:"03_Verladestation", lat: 48.200562, long: 15.606617, cover:3}, 
+  {name:"04_Das_Lager", lat: 48.200921, long: 15.606440, cover:4}, 
+  {name:"05_Die_Ortschaften", lat: 48.201282, long: 15.606295, cover:5}, 
+  {name:"06_Die_Kirche", lat: 48.201499, long: 15.605828, cover:6}, 
+  {name:"07_Die_Einfahrt", lat: 48.201508, long: 15.605259, cover:7}, 
+  {name:"08_Die_Wirtschaft", lat: 48.201856, long: 15.605023, cover:8}, 
+  {name:"09_Die_Kollegen", lat: 48.202217, long: 15.604841, cover:9}, 
+  {name:"10_Das_Spalten", lat: 48.202585, long: 15.604664, cover:10},
+  {name:"11_Der_Baron", lat: 48.202837, long: 15.605105, cover:11},
+  {name:"12_Die_Betriebsbaracke", lat: 48.203141, long: 15.606164, cover:12},
+  {name:"13_Das_Ziegelwerk", lat: 48.203315, long: 15.606677, cover:13},
+  {name:"14_Das_Waechterhaus", lat: 48.203478, long: 15.607211, cover:14}
 ];
 
 navigator.geolocation.watchPosition(succesCallback, errorCallback, options);

@@ -9,7 +9,7 @@ const title = document.querySelector('#title');
 const cover = document.querySelector('#cover');
 
 // Song titles
-const songs=["00_Welcome","01_Die_Ortsansaessigen","02_Steinbruch_Ort","03_Verladestation","04_Das_Lager","05_Die_Ortschaften", "06_Die_Kirche", "07_Die_Einfahrt", "08_Die_Wirtschaft", "09_Die_Kollegen", "10_Das_Spalten"];
+const songs=["00_Welcome"];
 
 // Keep track of the songs
 let songIndex = 0;
@@ -21,13 +21,6 @@ function initApp()
     title.innerText = "Willkommen bei Spuren lesbar machen. Berühren Sie den Play Button um zu starten.";
     audio.src = `audio/${songs[0]}.mp3`;
     cover.src = `img/${songs[0]}.jpg`;
-}
-
-function loadSong(song)
-{
-    title.innerText = song;
-    audio.src = `audio/${song}.mp3`;
-    cover.src = `img/${song}.jpg`;
 }
 
 function loadPosition(song)
@@ -56,31 +49,7 @@ function pauseSong()
     audio.pause();
 }
 
-function prevSong()
-{
-    songIndex--;
 
-    if(songIndex < 0)
-    {
-        songIndex = songs.length - 1;
-    }
-
-    loadSong(songs[songIndex]);
-    playSong();
-}
-
-function nextSong()
-{
-    songIndex++;
-
-    if(songIndex > songs.length - 1)
-    {
-        songIndex = 0;
-    }
-
-    loadSong(songs[songIndex]);
-    playSong();
-}
 
 function updateProgress(e)
 {
@@ -131,3 +100,37 @@ progressContainer.addEventListener('click', setProgress);
 
 //Automaticly continue when audio ended
 //audio.addEventListener('ended', nextSong);
+
+
+function loadSong(song)
+{
+    title.innerText = song;
+    audio.src = `audio/${song}.mp3`;
+    cover.src = `img/${song}.jpg`;
+}
+
+function prevSong()
+{
+    songIndex--;
+
+    if(songIndex < 0)
+    {
+        songIndex = songs.length - 1;
+    }
+
+    loadSong(songs[songIndex]);
+    playSong();
+}
+
+function nextSong()
+{
+    songIndex++;
+
+    if(songIndex > songs.length - 1)
+    {
+        songIndex = 0;
+    }
+
+    loadSong(songs[songIndex]);
+    playSong();
+}
