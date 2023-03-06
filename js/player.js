@@ -5,11 +5,13 @@ const nextBtn = document.querySelector('#next');
 const audio = document.querySelector('#audio');
 const progress = document.querySelector('.progress');
 const progressContainer = document.querySelector('.progress-container');
-const title = document.querySelector('#title');
+//const title = document.querySelector('#title');
 const cover = document.querySelector('#cover');
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
 
 // Song titles
-const songs=["00_Welcome"];
+const songs=["00_Welcome", "04_Das_Lager"];
 
 // Keep track of the songs
 let songIndex = 0;
@@ -18,16 +20,16 @@ initApp();
 
 function initApp()
 {
-    title.innerText = "Willkommen bei Spuren lesbar machen. Berühren Sie den Play Button um zu starten.";
+    //title.innerText = "Willkommen bei Spuren lesbar machen. Berühren Sie den Play Button um zu starten.";
     audio.src = `audio/${songs[0]}.mp3`;
-    cover.src = `img/${songs[0]}.jpg`;
+    cover.src = `img/${songs[1]}.jpg`;
 }
 
 function loadPosition(song)
 {
     tempTitle = song.replace(/_/g, " ");
     console.log(tempTitle);
-    title.innerText = tempTitle.slice(3);
+    //title.innerText = tempTitle.slice(3);
     audio.src = `audio/${song}.mp3`;
     cover.src = `img/${song}.jpg`;
     audio.play();
@@ -82,17 +84,18 @@ playBtn.addEventListener('click', () =>
         playSong();
     } */
     playSong();
-    title.innerText = "Bewegen Sie sich durch das Gelände und entdecken Sie dessen Geschichte.";
+    //title.innerText = "Bewegen Sie sich durch das Gelände und entdecken Sie dessen Geschichte.";
     document.getElementById("play").style.display = "none";
     acquireLock();
+    //openFullscreen();
     audio.onended = function() {
         hasStarted = true;
     };
 })
 
 // Change Song Events
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
+//prevBtn.addEventListener('click', prevSong);
+//nextBtn.addEventListener('click', nextSong);
 
 audio.addEventListener('timeupdate', updateProgress);
 
@@ -104,7 +107,7 @@ progressContainer.addEventListener('click', setProgress);
 
 function loadSong(song)
 {
-    title.innerText = song;
+    //title.innerText = song;
     audio.src = `audio/${song}.mp3`;
     cover.src = `img/${song}.jpg`;
 }
@@ -134,3 +137,26 @@ function nextSong()
     loadSong(songs[songIndex]);
     playSong();
 }
+
+//Fullscreen
+/* View in fullscreen */
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
+  
+  /* Close fullscreen */
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+  }

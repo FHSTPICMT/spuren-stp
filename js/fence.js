@@ -13,21 +13,107 @@ let changeCount = 0;
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
 const posArray =   
 [
-  {name:"01_Die_Ortsansaessigen", lat: 48.688112, long: 15.852433, cover:1},
-  {name:"02_Steinbruch_Ort", lat: 48.688011, long: 15.852956, cover:2}, 
-  {name:"03_Verladestation", lat: 48.687832, long: 15.853423, cover:3}, 
-  {name:"04_Das_Lager", lat: 48.687839, long: 15.853981, cover:4}, 
-  {name:"05_Die_Ortschaften", lat: 48.687754, long: 15.852430, cover:5}, 
-  {name:"06_Die_Kirche", lat:  48.687644, long: 15.852956, cover:6}, 
-  {name:"07_Die_Einfahrt", lat: 48.687434, long: 15.853374, cover:7}, 
-  {name:"08_Die_Wirtschaft", lat: 48.687487, long: 15.853916, cover:8}, 
-  {name:"09_Die_Kollegen", lat: 48.687339, long: 15.854404, cover:9}, 
-  {name:"10_Das_Spalten", lat: 48.202585, long: 15.604664, cover:10},
-  {name:"11_Der_Baron", lat: 48.202837, long: 15.605105, cover:11},
-  {name:"12_Die_Betriebsbaracke", lat: 48.203141, long: 15.606164, cover:12},
-  {name:"13_Das_Ziegelwerk", lat: 48.203315, long: 15.606677, cover:13},
-  {name:"14_Das_Waechterhaus", lat: 48.203478, long: 15.607211, cover:14}
-];
+  {
+    name: ['Reihe1'],
+    coord: "0,0"
+  },
+  {
+    name: ['01_Die_Ortsansaessigen','02_Steinbruch_Ort'],
+    coord: "48.688112,15.852433"
+  },
+  {
+    name: ['07_Die_Einfahrt'],
+    coord: "48.688011,15.852956"
+  },
+  {
+    name: ['03_Verladestation','04_Das_Lager'],
+    coord: "48.687832,15.853423"
+  },
+  {
+    name: ['05_Die_Ortschaften','06_Die_Kirche'],
+    coord: "48.687839,15.853981"
+  },
+  {
+    name: ['Reihe2'],
+    coord: "0,0"
+  },
+  {
+    name: ['24_Das_Lager_im_Westen'],
+    coord: "48.687754,15.852430"
+  },
+  {
+    name: ['08_Die_Wirtschaft','13_Das_Ziegelwerk'],
+    coord: "48.687644,15.852956"
+  },
+  {
+    name: ['15_Das_Steinbrecherhaus_Betrieb'],
+    coord: "48.687434,15.853374"
+  },
+  {
+    name: ['33_Der_Landschaftsgarten','34_Die_Passionsspiele'],
+    coord: "48.687487,15.853916"
+  },
+  {
+    name: ['31_Der_Badeunfall'],
+    coord: "48.687339,15.854404"
+  },
+  {
+    name: ['Reihe3'],
+    coord: "0,0"
+  },
+  {
+    name: ['32_Die_Austrocknung_des_Teichs','11_Der_Baron'],
+    coord: "48.687012,15.854614"
+  },
+  {
+    name: ['17_Das_NS-Arbeitsbuch_des_Steinbrucharbeiters','19_Die_Zwangsarbeit'],
+    coord: "48.686785,15.855027"
+  },
+  {
+    name: ['22_Der_Kellerausbau','23_Der_Aufseher'],
+    coord: "48.686426,15.855102"
+  },
+  {
+    name: ['07_Die_Einfahrt','09_Die_Kollegen'],
+    coord: "48.686072,15.855005"
+  },
+  {
+    name: ['27_Denunziert_und_deportiert','28_Die_Schotterwerbung'],
+    coord: "48.685856,15.854571"
+  },
+  {
+    name: ['Reihe4'],
+    coord: "0,0"
+  },
+  {
+    name: ['29_Der_Badeteich','30_Der_Badeteich_und_das_Steinbrecherhaus'],
+    coord: "48.687120,15.853970"
+  },
+  {
+    name: ['16_Das_Steinbrecherhaus_Stilllegung'],
+    coord: "48.687077,15.853421"
+  },
+  {
+    name: ['35_Die_Wehrsportuebungen'],
+    coord: "48.686724,15.853362 "
+  },
+  {
+    name: ['14_Das_Waechterhaus','12_Die_Betriebsbaracke'],
+    coord: "48.686369,15.853397"
+  },
+  {
+    name: ['18_Der_Gefolgschaftsraum','20_Der_Betriebsfuehrer'],
+    coord: "48.686014,15.853445"
+  },
+  {
+    name: ['21_Der_Nahrungsmangel','25_Vor_der_Befreiung'],
+    coord: "48.685660,15.853467"
+  },
+  {
+    name: ['26_Tag_der_Befreiung','36_Rechtsradikale_Umtriebe'],
+    coord: "48.685348,15.853703"
+  }
+]
 
 navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
 
@@ -62,10 +148,9 @@ function SearchTriggerPos()
   //Geht durch das posArray
   for (let index = 0; index < posArray.length; index++) {
     const element = posArray[index];
-    
+    const posSplit = element.coord.split(',');
     //Berechnet die Distanz von der aktuellen Position zum Array Punkt
-    distance = calculateDistance(currentPos.latitude, currentPos.longitude,element.lat, element.long);
-    console.log(distance);
+    distance = calculateDistance(currentPos.latitude, currentPos.longitude,parseFloat(posSplit[0]), parseFloat(posSplit[1]));
 
     if(distance <= searchRadius && element.name != currentPoint)
     {
@@ -76,9 +161,10 @@ function SearchTriggerPos()
 
   if(pointCount < 2 && pointCount != 0 )
   {
-    currentPoint = currentPointTemp.name;
-    console.log(currentPointTemp);
-    currentDistance = calculateDistance(currentPos.latitude, currentPos.longitude,currentPointTemp.lat, currentPointTemp.long);
+    currentPoint = currentPointTemp.name[0];
+    console.log(currentPoint);
+    const currentPosSplit = currentPointTemp.coord.split(',');
+    currentDistance = calculateDistance(currentPos.latitude, currentPos.longitude,parseFloat(currentPosSplit[0]), parseFloat(currentPosSplit[1]));
     $.getScript("player.js",loadPosition(currentPoint));
     document.getElementById("pointCountText").innerHTML = "Point Count: " + pointCount + "Change Count: " + changeCount;
   }
@@ -130,19 +216,16 @@ function ToggleDebug() {
 
 if('wakeLock' in navigator)
 {
-  console.log("WakeLock Supported.");
   wakeLockSupported = true;
   document.getElementById("wakeText").innerHTML = wakeLockSupported;
 }
 else
 {
-  console.log("WakeLock not Supported.");
   wakeLockSupported = false;
 }
 
 async function acquireLock(){
   wakeLock = await navigator.wakeLock.request("screen");
-  console.log("WakeLock activated.");
 }
 
 function releaseLock(){

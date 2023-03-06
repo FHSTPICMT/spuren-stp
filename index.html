@@ -9,6 +9,25 @@
     <title>Spuren lesbar machen</title>
   </head>
   <body>
+
+    <div class="content">
+      <div class="img-container">
+        <audio src="" id="audio"></audio>
+        <img src="" alt="music-cover" id="cover"/>
+        <br>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <div class="progress-container">
+          <div class="progress">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
     <div id="debug">
       <p>
         Current Location (lat, lon):<br/>
@@ -33,40 +52,13 @@
         Point Count:<br/>
         <span id="pointCountText">0</span> 
       </p>
+      <p>
+        Version Nr.: 17<br/>
+      </p>
     </div>
 
-    <div id="content">
-      <h1 id="mainTitle">Spuren lesbar machen v17</h1>
-      <div class="music-container">
-        <div class="music-info">
-          <h4 id="title">Song Title</h4>
-          <div class="progress-container">
-            <div class="progress">
-  
-            </div>
-          </div>
-        </div>
-        <audio src="" id="audio"></audio>
-  
-        <div class="img-container">
-          <img src="" alt="music-cover" id="cover"/>
-        </div>
-        <div class="navigation">
-          <div class="audioButtons">
-            <button id="prev" class="action-btn">
-              <i class="fas fa-backward"></i>
-            </button>
-            <button id="play" class="action-btn action-btn-big">
-              <i class="fas fa-play"></i>
-            </button>
-            <button id="next" class="action-btn">
-              <i class="fas fa-forward"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <button onclick="ToggleDebug()" class="button button2">Debug</button>
-    </div>
+
+
 
 
 
