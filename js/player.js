@@ -87,7 +87,7 @@ playBtn.addEventListener('click', () =>
     //title.innerText = "Bewegen Sie sich durch das Gelände und entdecken Sie dessen Geschichte.";
     document.getElementById("play").style.display = "none";
     acquireLock();
-    //openFullscreen();
+    openFullscreen();
     audio.onended = function() {
         hasStarted = true;
     };
