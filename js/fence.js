@@ -159,7 +159,7 @@ function SearchTriggerPos()
     }
   }
 
-  if(pointCount < 2 && pointCount != 0 )
+  if(pointCount < 2 && pointCount != 0 && audio.paused)
   {
     currentPoint = currentPointTemp.name[0];
     console.log(currentPoint);
@@ -230,6 +230,10 @@ async function acquireLock(){
 
 function releaseLock(){
 
+}
+
+function isPlaying(audelem) {
+  return!audelem.paused;
 }
 
 

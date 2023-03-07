@@ -1,4 +1,4 @@
-const musicContainer = document.querySelector('.music-container');
+const musicContainer = document.querySelector('.img-container');
 const playBtn= document.querySelector('#play');
 const prevBtn = document.querySelector('#prev');
 const nextBtn = document.querySelector('#next');
@@ -22,7 +22,7 @@ function initApp()
 {
     //title.innerText = "Willkommen bei Spuren lesbar machen. Berühren Sie den Play Button um zu starten.";
     audio.src = `audio/${songs[0]}.mp3`;
-    cover.src = `img/${songs[1]}.jpg`;
+    cover.src = `img/${songs[0]}.jpg`;
 }
 
 function loadPosition(song)

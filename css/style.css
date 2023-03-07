@@ -29,20 +29,38 @@ html{
   border: 0;
 }
 
+.progress-container{
+  background-color: #000;
+  cursor: pointer;
+  height: 15px;
+  text-align: center;
+}
 
+.progress{
+  background-color: #bb1841a4;
+  height: 100%;
+  transition: width 0.1s linear;
+}
+
+#debug {
+  font-size: 10px; 
+   color: rgb(255, 255, 255);
+ }
 
 @media only screen and (orientation: landscape) {
 
   .content{
-    text-align: center;
+  text-align: center;
+  overflow: hidden;
   }
 
   .img-container{
-    height: 100vh;
+    height: 100%;
+    display: inline-block;
   }
 
   .img-container img{
-    height: 100vh;
+    height: 100%;
   }
 
   .action-btn{
@@ -51,6 +69,12 @@ html{
     margin-right: -50%;
     top: 50%;
     left: 50%;
+  }
+
+  .progress-container{
+    margin-top: -20px;
+    z-index: 100;
+    position: relative;
   }
 }
 
@@ -61,7 +85,12 @@ html{
   }
 
   .img-container{
+    position: absolute;
     width: 100%;
+    transform: translate(-50%,-50%);
+    margin-right: -50%;
+    top: 50%;
+    left: 50%;
   }
 
   .img-container img{
@@ -77,33 +106,14 @@ html{
   }
 
   .progress-container{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    margin-right: -50%;
-    top: 65%;
-    left: 50%;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    margin-top: -20px;
   }
 }
-
-#debug {
-    display: none;
-    color: rgb(255, 255, 255);
-  }
     
-.progress-container{
-  background-color: #000;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 15px;
-  width: 100%;
-  text-align: center;
-}
 
-.progress{
-  background-color: #bb1841a4;
-  border-radius: 5px;
-  height: 100%;
-  width: 50%;
-  transition: width 0.1s linear;
-}
+
+
 
