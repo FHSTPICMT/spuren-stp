@@ -8,6 +8,7 @@ let hasStarted = false;
 let wakeLock = null;
 let wakeLockSupported = false;
 let changeCount = 0;
+let playCount = 0;
 
 //Array 
 //mit Positions Name / Latitude, Longitude / Video, Bild Link
@@ -120,10 +121,12 @@ navigator.geolocation.watchPosition(succesCallback, errorCallback, options);
 //Get the current position
 function succesCallback(pos)
 {
+
   currentPos = pos.coords;
   UpdateHtmlText();
   if(hasStarted)
   {
+    console.log("Successs");
     SearchTriggerPos();
   }
 }
@@ -151,21 +154,46 @@ function SearchTriggerPos()
     const posSplit = element.coord.split(',');
     //Berechnet die Distanz von der aktuellen Position zum Array Punkt
     distance = calculateDistance(currentPos.latitude, currentPos.longitude,parseFloat(posSplit[0]), parseFloat(posSplit[1]));
-
-    if(distance <= searchRadius && element.name != currentPoint)
+    
+    if(distance <= searchRadius && element.name[0] != currentPoint)
     {
+      console.log(currentPoint + " / " + element.name);
       currentPointTemp = element;
       pointCount++;
+      console.log(currentPos);
+      console.log(currentPointTemp);
     }
   }
 
   if(pointCount < 2 && pointCount != 0 && audio.paused)
   {
     currentPoint = currentPointTemp.name[0];
-    console.log(currentPoint);
     const currentPosSplit = currentPointTemp.coord.split(',');
     currentDistance = calculateDistance(currentPos.latitude, currentPos.longitude,parseFloat(currentPosSplit[0]), parseFloat(currentPosSplit[1]));
-    $.getScript("player.js",loadPosition(currentPoint));
+
+    console.log(currentPointTemp.name.length);
+    if(currentPointTemp.name.length < 2)
+    {
+      console.log("One");
+      $.getScript("player.js",loadPosition(currentPointTemp.name[0]));
+    } else
+    {
+      console.log("Multi");
+      $.getScript("player.js",loadPosition(currentPointTemp.name[0]));
+      
+      audio.onended = function() {
+        console.log("Eeeeend");
+        if(playCount < currentPointTemp.name.length-1)
+        {
+          playCount++;
+          $.getScript("player.js",loadPosition(currentPointTemp.name[playCount]));
+        } else
+        {
+          playCount = 0;
+          audio.onended = null;
+        }
+      };
+    }
     document.getElementById("pointCountText").innerHTML = "Point Count: " + pointCount + "Change Count: " + changeCount;
   }
   else

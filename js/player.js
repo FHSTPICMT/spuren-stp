@@ -90,6 +90,7 @@ playBtn.addEventListener('click', () =>
     openFullscreen();
     audio.onended = function() {
         hasStarted = true;
+        SearchTriggerPos();
     };
 })
 
