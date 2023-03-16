@@ -20,19 +20,19 @@ const posArray =
   },
   {
     name: ['01_Die_Ortsansaessigen','02_Steinbruch_Ort'],
-    coord: "48.688112,15.852433"
+    coord: "48.214148,15.632561"
   },
   {
     name: ['07_Die_Einfahrt'],
-    coord: "48.688011,15.852956"
+    coord: "48.214284,15.632033"
   },
   {
     name: ['03_Verladestation','04_Das_Lager'],
-    coord: "48.687832,15.853423"
+    coord: "48.214132,15.631491"
   },
   {
     name: ['05_Die_Ortschaften','06_Die_Kirche'],
-    coord: "48.687839,15.853981"
+    coord: "48.213796,15.631206"
   },
   {
     name: ['Reihe2'],
@@ -40,11 +40,11 @@ const posArray =
   },
   {
     name: ['24_Das_Lager_im_Westen'],
-    coord: "48.687754,15.852430"
+    coord: "48.213412,15.631252"
   },
   {
     name: ['08_Die_Wirtschaft','13_Das_Ziegelwerk'],
-    coord: "48.687644,15.852956"
+    coord: "48.213058,15.631027"
   },
   {
     name: ['15_Das_Steinbrecherhaus_Betrieb'],
