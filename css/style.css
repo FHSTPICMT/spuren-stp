@@ -23,9 +23,32 @@ html{
 }
 
 .action-btn{
-  color: rgb(255, 255, 255);
+  color: rgb(100, 100, 100);
   background-color: rgba(255, 255, 255, 0);
-  font-size: 80px;
+  font-size: 40px;
+  border: 0;
+}
+
+.start-content{
+  color: rgb(100, 100, 100);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+.source-container{
+  color: rgb(100, 100, 100);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 15px;
+  border: 0;
+  padding-left: 2%;
+}
+
+.action-btn-np{
+  color: rgb(100, 100, 100);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 40px;
   border: 0;
 }
 
@@ -37,7 +60,7 @@ html{
 }
 
 .progress{
-  background-color: #bb1841a4;
+  background-color: rgba(100, 100, 100, 0.643);
   height: 100%;
   transition: width 0.1s linear;
 }
@@ -54,6 +77,16 @@ html{
   overflow: hidden;
   }
 
+  .start-container{
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 10%;
+  }
+
   .img-container{
     height: 100%;
     display: inline-block;
@@ -63,12 +96,42 @@ html{
     height: 100%;
   }
 
+  .img-container-gallery{
+    height: 100%;
+    display: inline-block;
+  }
+
+  .img-container-gallery img{
+    height: 80%;
+  }
+
   .action-btn{
     position: absolute;
     transform: translate(-50%,-50%);
     margin-right: -50%;
     top: 50%;
     left: 50%;
+  }
+
+  .action-btn-play{
+    position: absolute;
+    margin-right: -50%;
+    top: 90%;
+    left: 50%;
+  }
+
+  .action-btn-next{
+    position: absolute;
+    margin-right: -10%;
+    top: 81%;
+    left: 65%;
+  }
+
+  .action-btn-prev{
+    position: absolute;
+    margin-right: -10%;
+    top: 81%;
+    left: 28%;
   }
 
   .progress-container{
@@ -84,6 +147,21 @@ html{
     display: table-cell;
   }
 
+  .start-content{
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  .start-container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 5%;
+        padding-right: 5%;
+  }
+
   .img-container{
     position: absolute;
     width: 100%;
@@ -96,6 +174,19 @@ html{
   .img-container img{
     width: 100%;
   }
+  
+  .img-container-gallery{
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    margin-right: -50%;
+    top: 45%;
+    left: 50%;
+  }
+
+  .img-container-gallery img{
+    width: 100%;
+  }
 
   .action-btn{
     position: absolute;
@@ -103,6 +194,30 @@ html{
     margin-right: -50%;
     top: 50%;
     left: 50%;
+  }
+
+  .action-btn-play{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    margin-right: -50%;
+    top: 107%;
+    left: 50%;
+  }
+
+  .action-btn-next{
+    position: absolute;
+    transform: translate(-50%,-10%);
+    margin-right: -10%;
+    top: 105%;
+    left: 75%;
+  }
+
+  .action-btn-prev{
+    position: absolute;
+    transform: translate(-50%,-10%);
+    margin-right: -10%;
+    top: 105%;
+    left: 25%;
   }
 
   .progress-container{

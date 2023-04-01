@@ -6,54 +6,30 @@
      <!-- CSS -->
      <link rel="stylesheet" type="text/css" href="css/style.css">
      <link rel="stylesheet" href="css/all.min.css" />
-    <title>Spuren lesbar machen</title>
+    <title>DER STEINBRUCH, DAS LAGER UND DIE ORTSCHAFTEN</title>
   </head>
   <body>
-    <div class="content">
-      <div class="img-container">
-        <audio src="" id="audio"></audio>
-        <img src="" alt="music-cover" id="cover"/>
-        <button id="play" class="action-btn action-btn-big">
-          <i class="fas fa-play"></i>
-        </button>
-        <div class="progress-container">
-          <div class="progress">
+    <div class="start-container">
+        <div class="start-content">
+          DER STEINBRUCH, DAS LAGER UND DIE ORTSCHAFTEN
         </div>
-      </div>
-    </div>
+        <br>
+        <button class="start-content" id="full-gps">
+            <i class="fa-sharp fa-solid fa-globe"></i>
+            GPS
+        </button>
+        <br>
+        <button class="start-content" id="full-gallery">
+            <i class="fa-solid fa-image"></i>
+            Gallerie
+        </button>
+        <br>
+        <button onclick="window.location.href='sources.html'" id="play-source" class="start-content">
+            <i class="fa-solid fa-book"></i>
+            Quellen
+        </button>
     </div>
 
-    <div id="debug">
-      <p>
-        Current Location (lat, lon):<br/>
-        <span id="currentLat">locating...</span>&deg;, <span id="currentLon">locating...</span>&deg;
-      </p>
-      <p>
-        Distance from current target:<br/>
-        <span id="distance">0</span> km
-      </p>
-      <p>
-        Accuracy:<br/>
-        <span id="accuracyText">0</span> 
-      </p>
-      <p>
-        Point Count:<br/>
-        <span id="pointCountText">0</span> 
-      </p>
-      <p>
-        Wake Lock:<br/>
-        <span id="wakeText">0</span> 
-      </p>
-      <p>
-        Version Nr.: 20<br/>
-      </p>
-    </div>
-    <!-- JS -->
-    <!-- JQuery for $ Operator in JS -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/fence.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
-    
   </body>
 </html>
